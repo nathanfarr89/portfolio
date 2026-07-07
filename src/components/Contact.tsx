@@ -30,9 +30,7 @@ export function Contact() {
             LinkedIn
           </a>
         </div>
-        <p className="mt-6 text-sm text-slate-500">
-          {profile.phone} · {profile.location}
-        </p>
+        <p className="mt-6 text-sm text-slate-500">{profile.location}</p>
       </div>
     </section>
   )
