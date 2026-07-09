@@ -127,13 +127,20 @@ function TestimonialCard({ testimonial, variant, onClick, className = '' }: Test
           : 'w-48 scale-90 cursor-pointer border-white/5 bg-white/[0.02] p-6 opacity-50 hover:opacity-80'
       } ${className}`}
     >
-      <img
-        src={testimonial.photo}
-        alt={testimonial.name}
-        className={`rounded-full object-cover ring-2 ring-white/10 ${
-          isCenter ? 'h-20 w-20' : 'h-14 w-14'
-        }`}
-      />
+      <a
+        href={testimonial.linkedin}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`${testimonial.name} on LinkedIn`}
+      >
+        <img
+          src={testimonial.photo}
+          alt={testimonial.name}
+          className={`rounded-full object-cover ring-2 ring-white/10 transition-colors hover:ring-sky-400/50 ${
+            isCenter ? 'h-20 w-20' : 'h-14 w-14'
+          }`}
+        />
+      </a>
       <p
         className={`mt-4 text-slate-300 ${
           isCenter ? 'text-sm leading-relaxed' : 'line-clamp-3 text-xs leading-relaxed'
@@ -141,9 +148,16 @@ function TestimonialCard({ testimonial, variant, onClick, className = '' }: Test
       >
         &ldquo;{testimonial.quote}&rdquo;
       </p>
-      <p className={`mt-4 font-semibold text-white ${isCenter ? 'text-sm' : 'text-xs'}`}>
+      <a
+        href={testimonial.linkedin}
+        target="_blank"
+        rel="noreferrer"
+        className={`mt-4 font-semibold text-white hover:text-sky-400 hover:underline ${
+          isCenter ? 'text-sm' : 'text-xs'
+        }`}
+      >
         {testimonial.name}
-      </p>
+      </a>
       <p className={`text-slate-500 ${isCenter ? 'text-xs' : 'text-[11px]'}`}>
         {testimonial.title}
       </p>
