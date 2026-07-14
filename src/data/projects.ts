@@ -15,4 +15,11 @@ export const projects: Project[] = [
     tags: ['React 19', 'TypeScript', 'Migration'],
     href: 'https://github.com/nathanfarr89/react-18-to-19-migration-guide',
   },
+  {
+    title: 'Accessible React Components',
+    description:
+      'Dialog, Combobox, and Tabs built to the WAI-ARIA APG pattern for each widget, covered by a Playwright suite that drives every interaction with a real keyboard rather than asserting on markup alone.',
+    tags: ['React', 'Accessibility', 'Playwright', 'Storybook'],
+    href: 'https://github.com/nathanfarr89/accessible-components',
+  },
 ]
