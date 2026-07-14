@@ -10,7 +10,7 @@ import { Testimonials } from './components/Testimonials'
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-paper">
       <Header />
       <main>
         <Hero />

@@ -18,20 +18,17 @@ export function Testimonials() {
   }
 
   return (
-    <section id="testimonials" className="mx-auto max-w-5xl px-6 py-20">
-      <h2 className="text-sm font-medium tracking-widest text-sky-400 uppercase">
-        Testimonials
-      </h2>
-      <h3 className="mt-2 text-3xl font-semibold tracking-tight text-white">
+    <section id="testimonials" className="mx-auto max-w-5xl px-6 py-20 text-center">
+      <h2 className="font-display text-[clamp(2rem,4vw,2.75rem)] font-semibold tracking-tight text-ink">
         What people say
-      </h3>
+      </h2>
 
       <div className="mt-10 flex items-center justify-center gap-4">
         <button
           type="button"
           onClick={() => goTo(active - 1)}
           aria-label="Previous testimonial"
-          className="hidden shrink-0 rounded-full border border-white/10 p-2 text-slate-400 transition-colors hover:border-white/30 hover:text-white sm:block"
+          className="hidden shrink-0 rounded-full border border-ink/12 p-2 text-ink-muted transition-colors hover:border-ink/30 hover:text-ink sm:block"
         >
           <ChevronIcon direction="left" />
         </button>
@@ -66,7 +63,7 @@ export function Testimonials() {
           type="button"
           onClick={() => goTo(active + 1)}
           aria-label="Next testimonial"
-          className="hidden shrink-0 rounded-full border border-white/10 p-2 text-slate-400 transition-colors hover:border-white/30 hover:text-white sm:block"
+          className="hidden shrink-0 rounded-full border border-ink/12 p-2 text-ink-muted transition-colors hover:border-ink/30 hover:text-ink sm:block"
         >
           <ChevronIcon direction="right" />
         </button>
@@ -77,7 +74,7 @@ export function Testimonials() {
           type="button"
           onClick={() => goTo(active - 1)}
           aria-label="Previous testimonial"
-          className="rounded-full border border-white/10 p-2 text-slate-400 transition-colors hover:border-white/30 hover:text-white"
+          className="rounded-full border border-ink/12 p-2 text-ink-muted transition-colors hover:border-ink/30 hover:text-ink"
         >
           <ChevronIcon direction="left" />
         </button>
@@ -85,7 +82,7 @@ export function Testimonials() {
           type="button"
           onClick={() => goTo(active + 1)}
           aria-label="Next testimonial"
-          className="rounded-full border border-white/10 p-2 text-slate-400 transition-colors hover:border-white/30 hover:text-white"
+          className="rounded-full border border-ink/12 p-2 text-ink-muted transition-colors hover:border-ink/30 hover:text-ink"
         >
           <ChevronIcon direction="right" />
         </button>
@@ -99,7 +96,7 @@ export function Testimonials() {
             onClick={() => goTo(i)}
             aria-label={`Show testimonial from ${t.name}`}
             className={`h-1.5 rounded-full transition-all ${
-              i === active ? 'w-6 bg-sky-400' : 'w-1.5 bg-white/15 hover:bg-white/30'
+              i === active ? 'w-6 bg-accent' : 'w-1.5 bg-ink/15 hover:bg-ink/30'
             }`}
           />
         ))}
@@ -123,8 +120,8 @@ function TestimonialCard({ testimonial, variant, onClick, className = '' }: Test
       onClick={onClick}
       className={`flex shrink-0 flex-col items-center rounded-2xl border text-center transition-all duration-300 ${
         isCenter
-          ? 'w-full max-w-sm border-white/10 bg-white/[0.04] p-8 sm:scale-105'
-          : 'w-48 scale-90 cursor-pointer border-white/5 bg-white/[0.02] p-6 opacity-50 hover:opacity-80'
+          ? 'w-full max-w-sm border-ink/10 bg-surface/70 p-8 sm:scale-105'
+          : 'w-48 scale-90 cursor-pointer border-ink/6 bg-surface/30 p-6 opacity-60 hover:opacity-90'
       } ${className}`}
     >
       <a
@@ -136,13 +133,13 @@ function TestimonialCard({ testimonial, variant, onClick, className = '' }: Test
         <img
           src={testimonial.photo}
           alt={testimonial.name}
-          className={`rounded-full object-cover ring-2 ring-white/10 transition-colors hover:ring-sky-400/50 ${
+          className={`rounded-full object-cover ring-2 ring-paper transition-colors hover:ring-accent/50 ${
             isCenter ? 'h-20 w-20' : 'h-14 w-14'
           }`}
         />
       </a>
       <p
-        className={`mt-4 text-slate-300 ${
+        className={`mt-4 text-ink-muted ${
           isCenter ? 'text-sm leading-relaxed' : 'line-clamp-3 text-xs leading-relaxed'
         }`}
       >
@@ -152,13 +149,13 @@ function TestimonialCard({ testimonial, variant, onClick, className = '' }: Test
         href={testimonial.linkedin}
         target="_blank"
         rel="noreferrer"
-        className={`mt-4 font-semibold text-white hover:text-sky-400 hover:underline ${
+        className={`mt-4 font-semibold text-ink hover:text-accent hover:underline ${
           isCenter ? 'text-sm' : 'text-xs'
         }`}
       >
         {testimonial.name}
       </a>
-      <p className={`text-slate-500 ${isCenter ? 'text-xs' : 'text-[11px]'}`}>
+      <p className={`text-ink-faint ${isCenter ? 'text-xs' : 'text-[11px]'}`}>
         {testimonial.title}
       </p>
     </div>
