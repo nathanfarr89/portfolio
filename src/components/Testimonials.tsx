@@ -9,12 +9,20 @@ function useCarouselIndices(length: number, active: number) {
 
 export function Testimonials() {
   const [active, setActive] = useState(0)
+  const [direction, setDirection] = useState<'forward' | 'backward'>('forward')
   const { left, right } = useCarouselIndices(testimonials.length, active)
 
   const showSides = testimonials.length > 1
 
   function goTo(index: number) {
-    setActive(((index % testimonials.length) + testimonials.length) % testimonials.length)
+    const length = testimonials.length
+    const target = ((index % length) + length) % length
+    if (target === active) return
+
+    const forwardDistance = (target - active + length) % length
+    const backwardDistance = (active - target + length) % length
+    setDirection(forwardDistance <= backwardDistance ? 'forward' : 'backward')
+    setActive(target)
   }
 
   return (
@@ -33,24 +41,25 @@ export function Testimonials() {
           <ChevronIcon direction="left" />
         </button>
 
-        <div className="flex w-full items-center justify-center gap-4 sm:gap-6">
+        <div
+          key={active}
+          className={`flex w-full items-center justify-center gap-4 sm:gap-6 ${
+            direction === 'forward'
+              ? 'motion-safe:animate-[carousel-in-forward_0.35s_ease-out]'
+              : 'motion-safe:animate-[carousel-in-backward_0.35s_ease-out]'
+          }`}
+        >
           {showSides && (
             <TestimonialCard
-              key={`side-left-${left}`}
               testimonial={testimonials[left]}
               variant="side"
               onClick={() => goTo(left)}
               className="hidden sm:block"
             />
           )}
-          <TestimonialCard
-            key={`center-${active}`}
-            testimonial={testimonials[active]}
-            variant="center"
-          />
+          <TestimonialCard testimonial={testimonials[active]} variant="center" />
           {showSides && (
             <TestimonialCard
-              key={`side-right-${right}`}
               testimonial={testimonials[right]}
               variant="side"
               onClick={() => goTo(right)}
