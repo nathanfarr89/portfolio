@@ -9,6 +9,13 @@ export type Project = {
 // a "coming soon" placeholder automatically while this stays empty.
 export const projects: Project[] = [
   {
+    title: 'Sharekitt',
+    description:
+      'An employee/brand advocacy platform: marketing teams spin up campaigns and supporters grab ready-to-post assets — captions, images, and trackable short links — to share on their own channels. Built full-stack as a three-person side project that shipped and earned recognition in the marketing industry. This is a portfolio demo of the original product.',
+    tags: ['Full-Stack', 'React', 'Startup'],
+    href: 'https://sharekitt-demo.vercel.app/',
+  },
+  {
     title: 'React 18 → 19 Migration Guide',
     description:
       'Five breaking changes from a real production migration, each backed by a runnable before/after example and pinned to real compiler output — the repo fails typecheck if React’s types ever stop reproducing the error.',
