@@ -29,4 +29,18 @@ export const projects: Project[] = [
     tags: ['React', 'Accessibility', 'Playwright', 'Storybook'],
     href: 'https://github.com/nathanfarr89/accessible-components',
   },
+  {
+    title: 'Crypto Dashboard',
+    description:
+      'A live trading dashboard streaming real-time BTC/USD price data, an order book, and a trade tape.',
+    tags: ['React', 'WebSockets', 'Data Viz'],
+    href: 'https://crypto-dashboard-one-self.vercel.app/',
+  },
+  {
+    title: 'RAG Chat',
+    description:
+      'Upload documents and ask questions grounded in retrieved excerpts — runs as a static site with in-browser embeddings (transformers.js/WASM) and PDF.js parsing, calling the Claude API for generation.',
+    tags: ['React', 'TypeScript', 'RAG', 'Claude API'],
+    href: 'https://nathanfarr89.github.io/ai-rag-chat/',
+  },
 ]
