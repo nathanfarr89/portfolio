@@ -43,4 +43,11 @@ export const projects: Project[] = [
     tags: ['React', 'TypeScript', 'RAG', 'Claude API'],
     href: 'https://nathanfarr89.github.io/ai-rag-chat/',
   },
+  {
+    title: 'SLC Air Quality Tracker',
+    description:
+      'A dashboard mapping PM2.5 levels across the Salt Lake Valley to track winter inversion episodes, with real-time and historical charts from PurpleAir sensors (EPA-corrected) and Open-Meteo.',
+    tags: ['React', 'TypeScript', 'Mapbox', 'Data Viz'],
+    href: 'https://slc-air-quality-tracker.vercel.app/',
+  },
 ]
